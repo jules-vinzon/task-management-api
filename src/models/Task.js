@@ -11,12 +11,12 @@ const taskSchema = new mongoose.Schema(
     description: { type: String },
     status: {
       type: String,
-      enum: ["todo", "in-progress", "done"],
-      default: "todo",
+      enum: ["Pending", "Ongoing", "Completed"],
+      default: "Pending",
     },
     metadata: { type: Object },
   },
-  { timestamps: true, versionKey: false } 
+  { timestamps: { createdAt: 'created_at' }, versionKey: false } 
 );
 
 module.exports = mongoose.model("Task", taskSchema);

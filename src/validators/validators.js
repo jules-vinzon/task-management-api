@@ -18,6 +18,6 @@ exports.taskValidator = [
   body("title").isLength({ min: 1 }).withMessage("Title is required"),
   body("status")
     .optional()
-    .isIn(["todo", "in-progress", "done"])
+    .isIn(["Pending", "Ongoing", "Completed"])
     .withMessage("Invalid status"),
 ];

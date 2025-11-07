@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
   },
-  { timestamps: true, versionKey: false }
+  { timestamps: { createdAt: 'created_at' }, versionKey: false }
 );
 
 module.exports = mongoose.model("User", userSchema);
